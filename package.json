@@ -1,0 +1,41 @@
+{
+  "name": "wemo-ui",
+  "version": "0.1.0",
+  "description": "Wemo desktop application.",
+  "main": "main",
+  "scripts": {
+    "start": "electron .",
+    "build-mac": "electron-packager . wemoui --overwrite --asar --platform=darwin --arch=x64  --prune=true --out=builds --app-copyright\"Copyright © 2018 Evan Young\" --app-bundle-id=\"com.evanyoung.wemoui\"",
+    "build-win": "electron-packager . wemoui --overwrite --asar --platform=win32  --arch=ia32 --prune=true --out=builds --app-copyright\"Copyright © 2018 Evan Young\" --win32metadata.CompanyName=\"Evan Young\" --win32metadata.FileDescription=\"Wemo desktop application.\" --win32metadata.ProductName=\"WemoUI\"",
+    "build-lux": "electron-packager . wemoui --overwrite --asar --platform=linux  --arch=x64  --prune=true --out=builds --app-copyright\"Copyright © 2018 Evan Young\"",
+    "test": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DocCodes/wemo-ui.git"
+  },
+  "keywords": [
+    "Wemo"
+  ],
+  "author": "Evan Elias Young",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DocCodes/wemo-ui/issues"
+  },
+  "homepage": "https://github.com/DocCodes/wemo-ui#readme",
+  "devDependencies": {
+    "electron": "^2.0.6",
+    "electron-packager": "^12.1.0",
+    "standard": "^11.0.1"
+  },
+  "dependencies": {
+    "application-config": "^1.0.1",
+    "events": "^3.0.0",
+    "node-ssdp": "^3.3.0",
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2",
+    "url": "^0.11.0",
+    "xml2js": "^0.4.19",
+    "xmlbuilder": "^10.0.0"
+  }
+}

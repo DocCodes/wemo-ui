@@ -30,6 +30,7 @@ bower_components
 .lock-wscript
 
 # Compiled binary addons (https://nodejs.org/api/addons.html)
+builds
 build/Release
 
 # Dependency directories
@@ -57,5 +58,17 @@ typings/
 # dotenv environment variables file
 .env
 
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+
 # next.js build output
 .next
+
+# nuxt.js build output
+.nuxt
+
+# vuepress build output
+.vuepress/dist
+
+# Serverless directories
+.serverless
