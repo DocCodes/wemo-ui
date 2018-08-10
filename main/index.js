@@ -4,7 +4,6 @@ console.time('init')
 // <region> Variables
 const {app} = require('electron')
 const ipc = require('./ipc')
-var main
 // </region>
 
 // <region> App Handling
@@ -26,7 +25,7 @@ app.on('window-all-closed', () => { // Close app for not macs
 })
 
 app.on('activate', () => { // Reopen for macs
-  if (main === undefined) {
+  if (main === null) {
     main.init()
   }
 })
