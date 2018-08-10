@@ -33,7 +33,7 @@ async function init () {
   win.loadURL(config.WINDOW_MAIN)
 
   win.on('closed', () => {
-    win = null
+    win = main.win = null
   })
 
   win.once('ready-to-show', () => {

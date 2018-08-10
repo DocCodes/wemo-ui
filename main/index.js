@@ -4,6 +4,7 @@ console.time('init')
 // <region> Variables
 const {app} = require('electron')
 const ipc = require('./ipc')
+var menu
 var main
 // </region>
 
@@ -11,7 +12,7 @@ var main
 ipc.init() // Start the interprocess communcator
 app.on('ready', () => { // When the Electron app is ready to load
   console.timeEnd('app')
-  const menu = require('./menu')
+  menu = require('./menu')
   main = require('./window')
 
   main.init() // Start the main window
@@ -25,10 +26,7 @@ app.on('window-all-closed', () => { // Close app for not macs
 })
 
 app.on('activate', () => { // Reopen for macs
-  if (main === undefined) {
-    main.init()
-  } else {
-    main = require('./window')
+  if (main.win === null) {
     main.init()
   }
 })

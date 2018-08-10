@@ -21,6 +21,11 @@ function displaySwitch (sw) {
   `
   ipcRenderer.send('getBinaryState', sw.device.UDN)
 }
+function displaySwitches () {
+  for (let k of Object.keys(switches)) {
+    displaySwitch(switches[k])
+  }
+}
 
 function scan () {
   console.log('Scanning for switches')
@@ -51,10 +56,10 @@ function load () {
 
   ipcRenderer.on('found', (sender, sw, setup) => { // When a new switch is found
     sw.device = setup.root.device
-    let UDN = sw.device.UDN
-    switches[UDN] = sw
+    switches[sw.device.UDN] = sw
     console.log('New switch')
-    displaySwitch(sw)
+    clearDisplay()
+    displaySwitches()
   })
 
   ipcRenderer.on('getBinaryStateResponse', (sender, udn, state) => { updateDepiction(udn, state) })
