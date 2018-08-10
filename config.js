@@ -11,7 +11,7 @@ module.exports = {
   APP_TEAM: APP_TEAM,
   APP_VERSION: APP_VERSION,
   APP_WINDOW_TITLE: APP_NAME,
-  APP_ICON: path.join(__dirname, 'renderer', 'images', 'icons', 'png', '1024x1024.png'),
+  APP_ICON: path.join(__dirname, 'assets', 'icons', 'png', '1024x1024.png'),
 
   CONFIG_PATH: path.dirname(appConfig.filePath),
 

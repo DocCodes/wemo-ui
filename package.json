@@ -5,9 +5,11 @@
   "main": "main",
   "scripts": {
     "start": "electron .",
-    "build-mac": "electron-packager . wemoui --overwrite --asar --platform=darwin --arch=x64  --prune=true --out=builds --app-copyright\"Copyright © 2018 Evan Young\" --app-bundle-id=\"com.evanyoung.wemoui\"",
-    "build-win": "electron-packager . wemoui --overwrite --asar --platform=win32  --arch=ia32 --prune=true --out=builds --app-copyright\"Copyright © 2018 Evan Young\" --win32metadata.CompanyName=\"Evan Young\" --win32metadata.FileDescription=\"Wemo desktop application.\" --win32metadata.ProductName=\"WemoUI\"",
-    "build-lux": "electron-packager . wemoui --overwrite --asar --platform=linux  --arch=x64  --prune=true --out=builds --app-copyright\"Copyright © 2018 Evan Young\"",
+    "build-mac": "electron-packager . \"Wemo UI\" --overwrite --asar --platform=darwin --arch=x64  --prune=true --out=builds --app-copyright\"Copyright © 2018 Evan Young\" --icon=\"assets/icons/mac/icon.icns\" --app-bundle-id=\"com.evanyoung.wemoui\"",
+    "build-w32": "electron-packager . \"Wemo UI\" --overwrite --asar --platform=win32  --arch=ia32 --prune=true --out=builds --app-copyright\"Copyright © 2018 Evan Young\" --icon=\"assets/icons/win/icon.ico\"  --win32metadata.CompanyName=\"Evan Young\" --win32metadata.FileDescription=\"Wemo desktop application.\" --win32metadata.ProductName=\"WemoUI\"",
+    "build-w64": "electron-packager . \"Wemo UI\" --overwrite --asar --platform=win32  --arch=x64  --prune=true --out=builds --app-copyright\"Copyright © 2018 Evan Young\" --icon=\"assets/icons/win/icon.ico\"  --win32metadata.CompanyName=\"Evan Young\" --win32metadata.FileDescription=\"Wemo desktop application.\" --win32metadata.ProductName=\"WemoUI\"",
+    "build-win": "npm run build-w32 && npm run build-w64",
+    "build-lux": "electron-packager . \"Wemo UI\" --overwrite --asar --platform=linux  --arch=x64  --prune=true --out=builds --app-copyright\"Copyright © 2018 Evan Young\"",
     "test": "standard"
   },
   "repository": {
